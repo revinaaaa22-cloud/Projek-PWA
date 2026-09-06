@@ -1,0 +1,143 @@
+/* ============================================================
+   1. DEFINISI VARIABEL WARNA (Dark & Light Mode)
+   ============================================================ */
+   :root, html.dark {
+    /* Base Colors */
+    --bg-main: #050b14;
+    --bg-grid: rgba(0, 242, 254, 0.05);
+    
+    /* SEMUA TEKS MODE DARK: PUTIH MURNI (#ffffff) */
+    --text-main: #ffffff;
+    --text-muted: #ffffff;
+  
+    /* Card & Hero Box */
+    --card-bg: rgba(10, 22, 40, 0.85);
+    --card-border: rgba(0, 242, 254, 0.25);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  
+    /* Form & Input */
+    --input-bg: #0f172a;
+    --input-text: #ffffff;
+    --input-border: #334155;
+  
+    /* Typography & Accents */
+    --text-cyan: #ffffff; 
+    --text-cyan-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    --text-white: #ffffff;
+    --text-white-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  
+    /* Navbar & Footer */
+    --nav-bg: rgba(5, 11, 20, 0.95);
+    --footer-bg: #020617;
+    --footer-border: rgba(0, 242, 254, 0.2);
+  }
+  
+  html.light {
+    /* Base Colors */
+    --bg-main: #f8fafc;
+    --bg-grid: rgba(0, 0, 0, 0.08);
+  
+    /* SEMUA TEKS MODE LIGHT: HITAM PEKAT (#000000) */
+    --text-main: #000000;
+    --text-muted: #000000;
+  
+    /* Card & Hero Box */
+    --card-bg: #ffffff;
+    --card-border: #cbd5e1;
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+  
+    /* Form & Input */
+    --input-bg: #ffffff;
+    --input-text: #000000;
+    --input-border: #94a3b8;
+  
+    /* Typography & Accents */
+    --text-cyan: #0284c7;
+    --text-cyan-shadow: none;
+    --text-white: #000000;
+    --text-white-shadow: none;
+  
+    /* Navbar & Footer */
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --footer-bg: #e2e8f0;
+    --footer-border: #cbd5e1;
+  }
+  
+  /* ============================================================
+     2. STYLES UTAMA & GLOBAL TRANSITION
+     ============================================================ */
+  html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Memaksa semua elemen teks di Light Mode menjadi Hitam */
+  html.light h1, 
+  html.light h2, 
+  html.light h3, 
+  html.light h4, 
+  html.light h5, 
+  html.light h6, 
+  html.light p, 
+  html.light span, 
+  html.light label,
+  html.light button,
+  html.light a {
+    color: #000000 !important;
+  }
+  
+  /* Memaksa elemen judul & paragraf di Dark Mode menggunakan warna putih */
+  html.dark h1, 
+  html.dark h2, 
+  html.dark h3, 
+  html.dark h4, 
+  html.dark h5, 
+  html.dark h6, 
+  html.dark p, 
+  html.dark span, 
+  html.dark a {
+    color: #ffffff !important;
+  }
+  
+  body {
+    background-image: 
+      linear-gradient(var(--bg-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cyber-card, .hero-box, .modal-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    box-shadow: var(--card-shadow) !important;
+  }
+  
+  input, select, textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--input-text) !important;
+    border: 1px solid var(--input-border) !important;
+  }
+  
+  .cyber-text-cyan, .cyber-text-white {
+    color: var(--text-white) !important;
+    text-shadow: var(--text-white-shadow);
+  }
+  
+  nav {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--card-border);
+  }
+  
+  footer {
+    background-color: var(--footer-bg) !important;
+    border-top: 1px solid var(--footer-border) !important;
+  }
